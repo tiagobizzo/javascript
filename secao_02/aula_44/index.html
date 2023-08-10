@@ -1,0 +1,44 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<link href="style.css" rel="stylesheet"></style>
+
+<div id="desafio">
+
+    <h2>#01</h2>
+    <div>
+        <button @click="iniciarEfeito">Iniciar Efeito</button>
+        <div id="efeito" :class="classe1"></div>
+    </div>
+
+    <h2>#02</h2>
+    <div :class="[{perigo}, 'quadrado']">Estou sem classe CSS :(</div>
+
+    <h2>#03</h2>
+    <div>
+        <input type="text" v-model="classe3">
+        <div :class="classe3"></div>
+    </div>
+
+    <h2>#04</h2>
+    <div>
+        <input type="text" v-model="classe4"> <!-- escrever nome de classe para aplicar na div-->
+        <input type="text" @input="setPerigo"> <!-- true ou false -->
+        <div :class="[classe4, {perigo}]"></div>
+    </div>
+
+    <h2>#05</h2>
+    <div>
+        <input type="text" v-model="cor5">
+        <div :style="[estilo5, {backgroundColor: cor5}]"></div>
+    </div>
+
+    <h2>#06</h2>
+    <div>
+        <button @click="iniciarProgresso">Iniciar</button>
+        <div class="barra-progresso">
+            <div class="progress" :style="{width}"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
