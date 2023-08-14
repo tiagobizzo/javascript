@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="desafio">
+
+    <h2>#01</h2>
+    <div>
+        <button @click="mostrar = !mostrar">Alternar</button>
+        <p v-if="mostrar">Você quer me ver ...</p>
+        <p v-else>... ou eu</p>
+        <p v-show="mostrar">Você quer me ver ...</p>
+        <p v-show="!mostrar">...ou eu</p>
+    </div>
+    
+    <h2>#02</h2>
+    <ul>
+        <li v-for="(nome, i) in nomes">{{ nome }} - {{ i }}</li>
+    </ul>
+
+    <h2>#03</h2>
+    <ul>
+        <li v-for="(liv,tit, i) in livro">{{ tit }}: {{liv}} - {{i+1}}</li>
+    </ul>
+
+    <h2>#04</h2>
+    <ul>
+        <li v-for="valor in aluno">
+            <template v-if="!Array.isArray(valor)">
+                {{valor}}
+            </template>
+            <template v-else>
+                Notas: 
+                <ul>
+                    <li v-for="(nota, i) in valor">V{{i+1}}: {{ nota }}</li>
+                </ul>
+            </template>
+        </li>
+    </ul>
+
+    <h2>#05</h2>
+
+</div>
+
+<script src="app.js"></script>
