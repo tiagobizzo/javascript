@@ -1,0 +1,154 @@
+#desafio{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+#jogadores{
+    display: flex;
+    border: 1px solid #555;
+    height: 200px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 10px 10px 5px #555;
+}
+
+#jogador1{
+    width: 50%;
+    padding: 10px 15px;
+}
+
+#monstro{
+    width: 50%;
+    padding: 10px 15px;
+}
+
+.panel{
+    border: 1px solid #555;
+    width: 100%;
+    box-shadow: 10px 10px 5px #555;
+    padding: 15px;
+    margin: 10px;
+    padding: 20px;
+}
+
+#totBarSaudeJogador{
+    border: 1px solid #555;
+    height: 30%;
+}
+
+#totBarSaudeMonstro{
+    border: 1px solid #555;
+    height: 30%;
+}
+
+#saudeJogador{
+    /*width: 100%;*/
+    height: 100%;
+    background-color: #008542;
+}
+
+#totBarSaudeJogador .danger{
+    background-color: red;
+}
+
+#totBarSaudeMonstro .danger{
+    background-color: red;
+}
+
+#saudeMonstro{
+    width: 100%;
+    height: 100%;
+    background-color: #008542;
+}
+
+#log{
+    border: 1PX SOLID #555;
+    justify-content: center;
+    box-shadow: 10px 10px 5px #555;
+    padding: 10px;
+    height: auto;
+}
+
+.result{
+    display: flex;
+    justify-content: center;
+}
+
+.result .win{
+    color: green;
+    text-decoration: solid;
+}
+
+.result .lose{
+    color: red;
+}
+
+/*botões*/
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.new-game{
+    background-color: #4235af;
+    color: #fff;
+}
+
+.attack{
+    background-color: #e51c23;
+    color: #fff;
+}
+
+.especial-attack{
+    background-color: #ff9800;
+    color: black;
+}
+
+.heal{
+    background-color: #259b24;
+    color: #fff;
+}
+
+.give-up{
+    background-color: #BBB;
+    color: black;
+}
+
+/*Logs*/
+
+.logs ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logs ul li{
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    padding: 3px 0px;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+.player{
+    background-color: #4253afaa;
+    color: #FFF;
+}
+
+.monster{
+    background-color: #e51c23aa;
+    color: #FFF;
+}

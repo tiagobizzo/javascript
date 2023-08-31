@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matador de Monstros</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+    
+<br>
+<div id="desafio">
+
+    <div class="panel jogador" id="jogadores">
+
+        <div id="jogador1">
+            <h2>Jogador</h2>
+            <div id="totBarSaudeJogador">
+                <div id="saudeJogador" :class="{danger: saudeJogador < 20}" :style="{'width': saudeJogador + '%'}"></div>
+                <p>{{saudeJogador}}%</p>
+            </div>
+        </div>
+
+        <div id="monstro">
+            <h2>Monstro</h2>
+            <div id="totBarSaudeMonstro">
+                <div id="saudeMonstro" :class="{danger: saudeMonstro < 20}" :style="{'width': saudeMonstro + '%'}"></div>
+                <p>{{saudeMonstro}}%</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <div v-if="hasResult" class="panel result">
+        <div v-if="saudeMonstro == 0"class="win">Você ganhou!!!</div>
+        <div v-else class="lose">Você perdeu!</div>
+    </div>
+    <br>
+    <div class="panel buttons">
+        <template v-if="running">
+            <button class="btn attack" @click="attack(false)">ATAQUE</button>
+            <button class="btn especial-attack" @click="attack(true)">ATAQUE ESPECIAL</button>
+            <button class="btn heal" @click="healAndHurt">CURAR</button>
+            <button class="btn give-up" @click="running = false">DESISTIR</button>
+        </template>
+            <button v-else class="btn new-game" @click="startGame">INICIAR NOVO JOGO</button>
+    </div>
+    <br>
+    <div v-if="logs.length" class="panel logs">
+        <ul>
+            <li v-for="log in logs" :class="log.cls" class="log"> {{log.text}} </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+<script src="app.js"></script>
+</html>
